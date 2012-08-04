@@ -1,0 +1,14 @@
+{
+    "test": {
+        "name": "test",
+        "isEnabled": true,
+        "maxLogin": 0,
+        "maxLoginPerIP": 0,
+        "downloadRate": 0,
+        "uploadRate": 0,
+        "maxIdleTime": 0,
+        "password": "4221747:D40D331DC793710D56B5ED167F5F3B1A",
+        "homeDirectory": "/tmp",
+        "canWrite": true
+    }
+}

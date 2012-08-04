@@ -1,0 +1,374 @@
+<!DOCTYPE html >
+
+<html lang="de" dir="ltr">
+<head>
+    <title>ringo-ftpserver/ftpserver - ringo-ftpserver</title>
+    <link rel="shortcut icon" href="http://ringojs.org/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="http://ringojs.org/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="../static/jsdoc.css" />
+<script type="text/javascript" src="../static/jquery.js"></script>
+<script type="text/javascript" src="../static/jsdoc.js"></script>
+<script>
+$(document).ready(jsdocSetup);
+</script>
+
+</head>
+
+<body>
+<div class="wrap">
+
+    <div class="main">
+        <div class="content">
+                    <h1 class="modulename">Module ringo-ftpserver/ftpserver</h1>
+            <div class="fileoverview">
+                
+
+
+            </div>
+
+            <div class="classoverview">
+
+                <div class="classes">
+                                        <h2>Class <a href="#FtpServer" class="jsdoc-title">FtpServer</a></h2>
+                                        <div>
+                        <h3>Instance Methods</h3>
+                        <ul class="propertyoverview">
+                                                        <li>
+                                <a href="#FtpServer.prototype.addFtpLet" class="jsdoc-title"> addFtpLet</a>(name, impl)
+                            </li>
+                                                        <li>
+                                <a href="#FtpServer.prototype.isStopped" class="jsdoc-title"> isStopped</a>()
+                            </li>
+                                                        <li>
+                                <a href="#FtpServer.prototype.start" class="jsdoc-title"> start</a>()
+                            </li>
+                                                        <li>
+                                <a href="#FtpServer.prototype.stop" class="jsdoc-title"> stop</a>()
+                            </li>
+                            </ul>
+                    </div>
+                                        <div>
+                        <h3>Instance Properties</h3>
+                        <ul class="propertyoverview">
+                                                        <li>
+                                <a href="#FtpServer.prototype.ftplets" class="jsdoc-title"> ftplets</a>
+                            </li>
+                                                        <li>
+                                <a href="#FtpServer.prototype.server" class="jsdoc-title"> server</a>
+                            </li>
+                            </ul>
+                    </div>
+                                        <div>
+                        <h3>Static Methods</h3>
+                        <ul class="propertyoverview">
+                                                        <li>
+                                <a href="#FtpServer.createListener" class="jsdoc-title"> createListener</a>(opts)
+                            </li>
+                                                        <li>
+                                <a href="#FtpServer.createSslConfig" class="jsdoc-title"> createSslConfig</a>(opts)
+                            </li>
+                                                        <li>
+                                <a href="#FtpServer.createUserManager" class="jsdoc-title"> createUserManager</a>(file)
+                            </li>
+                            </ul>
+                    </div>
+                    </div>
+            </div>
+                <hr/>
+                <div class="details">
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer">
+                            <h3>
+                                <span class="itemtitle"><a id="FtpServer" href="#FtpServer" class="itemtitle itemname">FtpServer</a></span>
+                                <span class="itemtitle light">(listener, userManager)</span></h3>
+                            <div>
+                                <p>Instances of this class represent an FtpServer based on Apache FtpServer
+(http://mina.apache.org/ftpserver/)</p>
+
+
+                            </div>
+                                                        <div>
+                                <h4>Parameters</h4>
+                                <table>
+                                                                        <tr>
+                                        <td>org.apache.ftpserver.listener.Listener</td>
+                                        <td class="paramname">listener</td>
+                                        <td>The listener to use</td>
+                                    </tr>
+                                                                        <tr>
+                                        <td>org.apache.ftpserver.ftplet.UserManager</td>
+                                        <td class="paramname">userManager</td>
+                                        <td>The user manager</td>
+                                    </tr>
+                                    </table>
+                            </div>
+                                                        <div>
+                                <h4>Returns</h4>
+                                <table>
+                                    <tr>
+                                        <td>FtpServer</td>
+                                        <td>A newly created FtpServer instance</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer.createListener">
+                            <h3>
+                                <span class="itemtitle">FtpServer.<a id="FtpServer.createListener" href="#FtpServer.createListener" class="itemtitle itemname">createListener</a></span>
+                                <span class="itemtitle light">(opts)</span></h3>
+                            <div>
+                                <p>Creates a listener</p>
+
+<h3>Options</h3>
+
+<ul><li><code>port</code>: The port to listen on (defaults to 21)</li>
+<li><code>allow</code>: a comma, space, tab or LF separated list of IP addresses and/or CIDRs</li>
+<li><code>sslConfig</code>: The SSL config to use</li>
+<li><code>useImplicitSsl</code>: If boolean false this listener uses explicit SSL encryption (defaults to true)</li></ul>
+
+
+                            </div>
+                                                        <div>
+                                <h4>Parameters</h4>
+                                <table>
+                                                                        <tr>
+                                        <td></td>
+                                        <td class="paramname">opts</td>
+                                        <td>The options object</td>
+                                    </tr>
+                                    </table>
+                            </div>
+                                                        <div>
+                                <h4>Returns</h4>
+                                <table>
+                                    <tr>
+                                        <td>org.apache.ftpserver.listener.Listener</td>
+                                        <td> The listener</td>
+                                    </tr>
+                                </table>
+                            </div>
+                                                        <div>
+                                <h4>See</h4>
+                                <div class="extrainfo">
+                                    <a href="#createSslConfig">createSslConfig</a>
+                                </div>
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer.createSslConfig">
+                            <h3>
+                                <span class="itemtitle">FtpServer.<a id="FtpServer.createSslConfig" href="#FtpServer.createSslConfig" class="itemtitle itemname">createSslConfig</a></span>
+                                <span class="itemtitle light">(opts)</span></h3>
+                            <div>
+                                <p>Creates an SSL configuration</p>
+
+<h3>Options</h3>
+
+<ul><li><code>keystore</code>: The path to the Java keystore containing the server certificate</li>
+<li><code>password</code>: The passphrase of the Java keystore</li>
+<li><code>protocol</code>: The encryption protocol to use (either <code>ssl</code> or <code>tls</code>, defaults to the latter)</li></ul>
+
+
+                            </div>
+                                                        <div>
+                                <h4>Parameters</h4>
+                                <table>
+                                                                        <tr>
+                                        <td>Object</td>
+                                        <td class="paramname">opts</td>
+                                        <td>Options</td>
+                                    </tr>
+                                    </table>
+                            </div>
+                                                        <div>
+                                <h4>Returns</h4>
+                                <table>
+                                    <tr>
+                                        <td>org.apache.ftpserver.ssl.SslConfiguration</td>
+                                        <td> The SSL configuration object</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer.createUserManager">
+                            <h3>
+                                <span class="itemtitle">FtpServer.<a id="FtpServer.createUserManager" href="#FtpServer.createUserManager" class="itemtitle itemname">createUserManager</a></span>
+                                <span class="itemtitle light">(file)</span></h3>
+                            <div>
+                                <p>Creates a new user manager</p>
+
+
+                            </div>
+                                                        <div>
+                                <h4>Parameters</h4>
+                                <table>
+                                                                        <tr>
+                                        <td>String</td>
+                                        <td class="paramname">file</td>
+                                        <td>The path to the JSON file containing the user accounts</td>
+                                    </tr>
+                                    </table>
+                            </div>
+                                                        <div>
+                                <h4>Returns</h4>
+                                <table>
+                                    <tr>
+                                        <td>org.apache.ftpserver.usermanager.UserManager</td>
+                                        <td> The user manager</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer.prototype.addFtpLet">
+                            <h3>
+                                <span class="itemtitle">FtpServer.prototype.<a id="FtpServer.prototype.addFtpLet" href="#FtpServer.prototype.addFtpLet" class="itemtitle itemname">addFtpLet</a></span>
+                                <span class="itemtitle light">(name, impl)</span></h3>
+                            <div>
+                                <p>Adds the Ftplet to this server</p>
+
+
+                            </div>
+                                                        <div>
+                                <h4>Parameters</h4>
+                                <table>
+                                                                        <tr>
+                                        <td>String</td>
+                                        <td class="paramname">name</td>
+                                        <td>The name of the Ftplet</td>
+                                    </tr>
+                                                                        <tr>
+                                        <td>org.apache.ftpserver.ftplet.Ftplet</td>
+                                        <td class="paramname">impl</td>
+                                        <td>The Ftplet implementation</td>
+                                    </tr>
+                                    </table>
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer.prototype.ftplets">
+                            <h3>
+                                <span class="itemtitle">FtpServer.prototype.<a id="FtpServer.prototype.ftplets" href="#FtpServer.prototype.ftplets" class="itemtitle itemname">ftplets</a></span>
+                                </h3>
+                            <div>
+                                <p>A map containing the Ftplets used by this server</p>
+
+
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer.prototype.isStopped">
+                            <h3>
+                                <span class="itemtitle">FtpServer.prototype.<a id="FtpServer.prototype.isStopped" href="#FtpServer.prototype.isStopped" class="itemtitle itemname">isStopped</a></span>
+                                <span class="itemtitle light">()</span></h3>
+                            <div>
+                                <p>Returns true if this server is stopped</p>
+
+
+                            </div>
+                                                        <div>
+                                <h4>Returns</h4>
+                                <table>
+                                    <tr>
+                                        <td>Boolean</td>
+                                        <td> True if this server is stopped, false otherwise</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer.prototype.server">
+                            <h3>
+                                <span class="itemtitle">FtpServer.prototype.<a id="FtpServer.prototype.server" href="#FtpServer.prototype.server" class="itemtitle itemname">server</a></span>
+                                </h3>
+                            <div>
+                                <p>The wrapped server</p>
+
+
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer.prototype.start">
+                            <h3>
+                                <span class="itemtitle">FtpServer.prototype.<a id="FtpServer.prototype.start" href="#FtpServer.prototype.start" class="itemtitle itemname">start</a></span>
+                                <span class="itemtitle light">()</span></h3>
+                            <div>
+                                <p>Starts the server</p>
+
+
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer.prototype.stop">
+                            <h3>
+                                <span class="itemtitle">FtpServer.prototype.<a id="FtpServer.prototype.stop" href="#FtpServer.prototype.stop" class="itemtitle itemname">stop</a></span>
+                                <span class="itemtitle light">()</span></h3>
+                            <div>
+                                <p>Stops the server</p>
+
+
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
+                    </div>
+            </div>
+        </div>
+
+
+
+    <div class="menu" style="margin-top: 1em; font-size: 13px;">
+    ringo-ftpserver<br/>
+        <a href="../index.html">Module list</a>
+    <a href="../index_all.html">Full index</a><br/>
+    <input id="jsdoc-leftnavsearch" type="search" placeholder="Filter module list" size="14">
+    <ul class="jsdoc-leftnav leftnav">
+                <li><a href="../ftpserver/index.html"> ringo-ftpserver/ftpserver </a></li>
+                <li><a href="../jsonusermanager/index.html"> ringo-ftpserver/jsonusermanager </a></li>
+        </ul>
+
+</div>
+</div>
+</body>
+</html>
