@@ -8,6 +8,10 @@
 
 Although Apache FtpServer is a mature piece of software, *ringo-ftpserver* itself should currently **be considered beta**.
 
+## License
+
+[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+
 ## Installation
 
 As with all RingoJS packages, unzip the contents of the distribution archive into the `packages` directory inside the RingoJS home directory. Alternatively you can place it anywhere outside and create a symbolic link inside the `packages` directory.
@@ -34,14 +38,14 @@ Using *ringo-ftpserver* in an application is a matter of a few lines of code:
 
     // require the FtpServer module
     var {FtpServer} = require("ringo-ftpserver");
-    
+
     // create a listener
     var listener = FtpServer.createListener();
     // create a user manager on top of
     // the JSON file containing the user accounts
     var file = module.resolve("./users.json");
     var usermanager = FtpServer.createUserManager(file);
-    
+
     // create the server and start it
     var server = new FtpServer(listener, usermanager);
     server.start();
