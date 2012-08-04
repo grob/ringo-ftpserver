@@ -2,7 +2,7 @@
 
 ## About
 
-*ringo-ftpserver* is a lightweight Javascript wrapper around [Apache FtpServer](http://mina.apache.org/ftpserver/) which allows embedding an FTP server in RingoJS applications within a few lines of code.
+*ringo-ftpserver* is a lightweight Javascript wrapper around [Apache FtpServer](http://mina.apache.org/ftpserver/) which allows embedding an FTP server in [RingoJS](http://ringojs.org/) applications with a few lines of code.
 
 ## Status
 
