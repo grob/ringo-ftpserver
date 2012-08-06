@@ -23,5 +23,5 @@
     "engines": {
         "ringojs": ">=0.8"
     },
-    "main": "./lib/ftpclient"
+    "main": "./lib/ftpserver"
 }
