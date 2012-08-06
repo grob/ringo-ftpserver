@@ -35,7 +35,10 @@ $(document).ready(jsdocSetup);
                         <h3>Instance Methods</h3>
                         <ul class="propertyoverview">
                                                         <li>
-                                <a href="#FtpServer.prototype.addFtpLet" class="jsdoc-title"> addFtpLet</a>(name, impl)
+                                <a href="#FtpServer.prototype.addFtplet" class="jsdoc-title"> addFtplet</a>(name, impl)
+                            </li>
+                                                        <li>
+                                <a href="#FtpServer.prototype.bind" class="jsdoc-title"> bind</a>(eventName, callback)
                             </li>
                                                         <li>
                                 <a href="#FtpServer.prototype.isStopped" class="jsdoc-title"> isStopped</a>()
@@ -46,11 +49,20 @@ $(document).ready(jsdocSetup);
                                                         <li>
                                 <a href="#FtpServer.prototype.stop" class="jsdoc-title"> stop</a>()
                             </li>
+                                                        <li>
+                                <a href="#FtpServer.prototype.unbind" class="jsdoc-title"> unbind</a>(eventName, callback)
+                            </li>
                             </ul>
                     </div>
                                         <div>
                         <h3>Instance Properties</h3>
                         <ul class="propertyoverview">
+                                                        <li>
+                                <a href="#FtpServer.prototype.events" class="jsdoc-title"> events</a>
+                            </li>
+                                                        <li>
+                                <a href="#FtpServer.prototype.factory" class="jsdoc-title"> factory</a>
+                            </li>
                                                         <li>
                                 <a href="#FtpServer.prototype.ftplets" class="jsdoc-title"> ftplets</a>
                             </li>
@@ -240,9 +252,9 @@ $(document).ready(jsdocSetup);
 
                                         <!-- tpl-docitem -->
                     <div>
-                        <div class="docitem" docitem="FtpServer.prototype.addFtpLet">
+                        <div class="docitem" docitem="FtpServer.prototype.addFtplet">
                             <h3>
-                                <span class="itemtitle">FtpServer.prototype.<a id="FtpServer.prototype.addFtpLet" href="#FtpServer.prototype.addFtpLet" class="itemtitle itemname">addFtpLet</a></span>
+                                <span class="itemtitle">FtpServer.prototype.<a id="FtpServer.prototype.addFtplet" href="#FtpServer.prototype.addFtplet" class="itemtitle itemname">addFtplet</a></span>
                                 <span class="itemtitle light">(name, impl)</span></h3>
                             <div>
                                 <p>Adds the Ftplet to this server</p>
@@ -263,6 +275,66 @@ $(document).ready(jsdocSetup);
                                         <td>The Ftplet implementation</td>
                                     </tr>
                                     </table>
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer.prototype.bind">
+                            <h3>
+                                <span class="itemtitle">FtpServer.prototype.<a id="FtpServer.prototype.bind" href="#FtpServer.prototype.bind" class="itemtitle itemname">bind</a></span>
+                                <span class="itemtitle light">(eventName, callback)</span></h3>
+                            <div>
+                                <p>Binds the callback to the specified event</p>
+
+
+                            </div>
+                                                        <div>
+                                <h4>Parameters</h4>
+                                <table>
+                                                                        <tr>
+                                        <td>String</td>
+                                        <td class="paramname">eventName</td>
+                                        <td>The name of the event</td>
+                                    </tr>
+                                                                        <tr>
+                                        <td>Function</td>
+                                        <td class="paramname">callback</td>
+                                        <td>The callback method</td>
+                                    </tr>
+                                    </table>
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer.prototype.events">
+                            <h3>
+                                <span class="itemtitle">FtpServer.prototype.<a id="FtpServer.prototype.events" href="#FtpServer.prototype.events" class="itemtitle itemname">events</a></span>
+                                </h3>
+                            <div>
+                                <p>The event registry/dispatcher</p>
+
+
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer.prototype.factory">
+                            <h3>
+                                <span class="itemtitle">FtpServer.prototype.<a id="FtpServer.prototype.factory" href="#FtpServer.prototype.factory" class="itemtitle itemname">factory</a></span>
+                                </h3>
+                            <div>
+                                <p>The server factory used to configure server instances</p>
+
+
                             </div>
                             </div>
                         <hr/>
@@ -352,6 +424,37 @@ $(document).ready(jsdocSetup);
                         <hr/>
                     </div>
 
+                                        <!-- tpl-docitem -->
+                    <div>
+                        <div class="docitem" docitem="FtpServer.prototype.unbind">
+                            <h3>
+                                <span class="itemtitle">FtpServer.prototype.<a id="FtpServer.prototype.unbind" href="#FtpServer.prototype.unbind" class="itemtitle itemname">unbind</a></span>
+                                <span class="itemtitle light">(eventName, callback)</span></h3>
+                            <div>
+                                <p>Unbinds either all callbacks registered for an event, or a single one</p>
+
+
+                            </div>
+                                                        <div>
+                                <h4>Parameters</h4>
+                                <table>
+                                                                        <tr>
+                                        <td>String</td>
+                                        <td class="paramname">eventName</td>
+                                        <td>The name of the event</td>
+                                    </tr>
+                                                                        <tr>
+                                        <td>Function</td>
+                                        <td class="paramname">callback</td>
+                                        <td>Optional callback. If specified only this callback
+will be unregistered from the event.</td>
+                                    </tr>
+                                    </table>
+                            </div>
+                            </div>
+                        <hr/>
+                    </div>
+
                     </div>
             </div>
         </div>
@@ -364,6 +467,7 @@ $(document).ready(jsdocSetup);
     <a href="../index_all.html">Full index</a><br/>
     <input id="jsdoc-leftnavsearch" type="search" placeholder="Filter module list" size="14">
     <ul class="jsdoc-leftnav leftnav">
+                <li><a href="../events/index.html"> ringo-ftpserver/events </a></li>
                 <li><a href="../ftpserver/index.html"> ringo-ftpserver/ftpserver </a></li>
                 <li><a href="../jsonusermanager/index.html"> ringo-ftpserver/jsonusermanager </a></li>
         </ul>
