@@ -178,5 +178,5 @@ var password = function(users, username) {
 };
 
 if (require.main == module.id) {
-    main(system.args.splice(1));
+    main(require('system').args.splice(1));
 }
