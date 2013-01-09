@@ -55,5 +55,5 @@ var start = function(args) {
 }
 
 if (require.main == module.id) {
-    start(system.args.slice(1));
+    start(require('system').args.slice(1));
 }
