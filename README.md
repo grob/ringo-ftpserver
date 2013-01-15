@@ -14,13 +14,14 @@ Although Apache FtpServer is a mature piece of software, *ringo-ftpserver* itsel
 
 ## Installation
 
-As with all RingoJS packages, unzip the contents of the distribution archive into the `packages` directory inside the RingoJS home directory. Alternatively you can place it anywhere outside and create a symbolic link inside the `packages` directory.
+As with all RingoJS packages, unzip the contents of the distribution archive into the `packages` directory inside the RingoJS home directory. Alternatively you can place it anywhere outside and create a symbolic link inside the `packages` directory or use the -m switch while starting ringo and add the path to your desired module-direcotry.
+Please also have a look at rp (https://github.com/grob/rp/)
 
 ## Standalone Server
 
 *ringo-ftpserver* contains a `main.js` script suitable for starting a standalone FTP server. Assumed that RingoJS' `bin` directory is part of the PATH, simply start it with the following command:
 
-`ringo path/to/ringo-ftpserver/main`
+`ringo path/to/ringo-ftpserver/main.js`
 
 Calling the main script without any arguments displays the available configuration options. The only required argument is the path to a JSON file containing the user accounts. *ringo-ftpserver* comes with an example `users.json` file containing a test account (username: test, password: test). **Note** that the home directory of the test user will probably not exist in your setup, so you might want to adapt that.
 
@@ -41,8 +42,8 @@ Using *ringo-ftpserver* in an application is a matter of a few lines of code:
 
     // create a listener
     var listener = FtpServer.createListener();
-    // create a user manager on top of
-    // the JSON file containing the user accounts
+    // create a user manager on top of the JSON file 
+    // or javascript object containing the user accounts
     var file = module.resolve("./users.json");
     var usermanager = FtpServer.createUserManager(file);
 
