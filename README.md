@@ -14,8 +14,9 @@ Although Apache FtpServer is a mature piece of software, *ringo-ftpserver* itsel
 
 ## Installation
 
-As with all RingoJS packages, unzip the contents of the distribution archive into the `packages` directory inside the RingoJS home directory. Alternatively you can place it anywhere outside and create a symbolic link inside the `packages` directory or use the -m switch while starting ringo and add the path to your desired module-direcotry.
-Please also have a look at rp (https://github.com/grob/rp/)
+If [rp](https://github.com/grob/rp/) is installed, simply type `rp install ringo-ftpserver` to install the latest version.
+
+To manually install it unzip the contents of the distribution archive into the `packages` directory inside the RingoJS home directory. Alternatively you can place it anywhere outside and create a symbolic link inside the `packages` directory or use the -m switch while starting ringo and add the path to your desired module-directory.
 
 ## Standalone Server
 
