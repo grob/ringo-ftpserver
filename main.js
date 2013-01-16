@@ -50,6 +50,7 @@ var start = function(args) {
         "useImplicitSsl": opts.explicitSsl !== true
     });
     var userManager = FtpServer.createUserManager(usersFile);
+    userManager.on("reloaded", function(e) { print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> reloaded users <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")});
     var server = new FtpServer(listener, userManager);
     server.start();
 }
