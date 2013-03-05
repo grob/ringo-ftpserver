@@ -21,7 +21,7 @@
         
             <h1 class="modulename">Module ftpserver</h1>
         <div class="fileoverview">
-            
+            <p>The main ftp server module.</p>
 
 
         </div>
@@ -75,7 +75,7 @@
                         <a href="#FtpServer.createSslConfig" class="jsdoc-title"> createSslConfig</a>(opts)
                     </li>
                                         <li>
-                        <a href="#FtpServer.createUserManager" class="jsdoc-title"> createUserManager</a>(file)
+                        <a href="#FtpServer.createUserManager" class="jsdoc-title"> createUserManager</a>(fileOrObj)
                     </li>
                     </ul>
                 </div>
@@ -204,9 +204,9 @@
             <div class="docitem" data-docitem="FtpServer.createUserManager">
                 <h3 >
                     <span class="itemtitle">FtpServer.<a id="FtpServer.createUserManager" href="#FtpServer.createUserManager" class="itemtitle itemname">createUserManager</a></span>
-                    <span class="itemtitle light">(file)</span></h3>
+                    <span class="itemtitle light">(fileOrObj)</span></h3>
                 <div>
-                    <p>Creates a new user manager</p>
+                    <p>Creates a new user manager.</p>
 
 
                 </div>
@@ -214,9 +214,10 @@
                     <h4>Parameters</h4>
                     <table>
                                                 <tr>
-                            <td>String</td>
-                            <td class="paramname">file</td>
-                            <td>The path to the JSON file containing the user accounts</td>
+                            <td>String|Object</td>
+                            <td class="paramname">fileOrObj</td>
+                            <td>Either the path to the JSON file or
+an object containing the account data.</td>
                         </tr>
                         </table>
                 </div>

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>jsonusermanager - ringo-ftpserver</title>
+        <title>usermanager - ringo-ftpserver</title>
 
         <link rel="shortcut icon" href="http://ringojs.org/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="http://ringojs.org/favicon.ico" type="image/x-icon" />
@@ -19,70 +19,67 @@
     <div class="main">
         <div class="content jsdoc">
         
-            <h1 class="modulename">Module jsonusermanager</h1>
+            <h1 class="modulename">Module usermanager</h1>
         <div class="fileoverview">
             <p>This module provides a constructor for an ftp server
-user manager operating on top of a JSON file containing user accounts.</p>
+user manager operating on top of an object containing the user accounts.</p>
 
 
         </div>
 
         <div class="classoverview">
 
+                        <h2 class="functions">Functions</h2>
+            <ul class="functions propertyoverview">
+                                <li>
+                    <a href="#encryptPassword" class="jsdoc-title"> encryptPassword</a>(password)
+                </li>
+                </ul>
             <div class="classes">
-                                <h2>Class <a href="#JsonUserManager" class="jsdoc-title">JsonUserManager</a></h2>
+                                <h2>Class <a href="#UserManager" class="jsdoc-title">UserManager</a></h2>
                                 <h3>Instance Methods</h3>
                 <ul class="propertyoverview">
                                         <li>
-                        <a href="#JsonUserManager.prototype.authenticate" class="jsdoc-title"> authenticate</a>(authentication)
+                        <a href="#UserManager.prototype.authenticate" class="jsdoc-title"> authenticate</a>(authentication)
                     </li>
                                         <li>
-                        <a href="#JsonUserManager.prototype.doesExist" class="jsdoc-title"> doesExist</a>(username)
+                        <a href="#UserManager.prototype.doesExist" class="jsdoc-title"> doesExist</a>(username)
                     </li>
                                         <li>
-                        <a href="#JsonUserManager.prototype.getAdminName" class="jsdoc-title"> getAdminName</a>()
+                        <a href="#UserManager.prototype.getAdminName" class="jsdoc-title"> getAdminName</a>()
                     </li>
                                         <li>
-                        <a href="#JsonUserManager.prototype.getAllUserNames" class="jsdoc-title"> getAllUserNames</a>()
+                        <a href="#UserManager.prototype.getAllUserNames" class="jsdoc-title"> getAllUserNames</a>()
                     </li>
                                         <li>
-                        <a href="#JsonUserManager.prototype.getUserByName" class="jsdoc-title"> getUserByName</a>(username)
+                        <a href="#UserManager.prototype.getUserByName" class="jsdoc-title"> getUserByName</a>(username)
                     </li>
                                         <li>
-                        <a href="#JsonUserManager.prototype.isAdmin" class="jsdoc-title"> isAdmin</a>(username)
+                        <a href="#UserManager.prototype.isAdmin" class="jsdoc-title"> isAdmin</a>(username)
                     </li>
                                         <li>
-                        <a href="#JsonUserManager.prototype.loadUsers" class="jsdoc-title"> loadUsers</a>(jsonFile)
+                        <a href="#UserManager.prototype.loadUsers" class="jsdoc-title"> loadUsers</a>(obj)
                     </li>
                                         <li>
-                        <a href="#JsonUserManager.prototype.save" class="jsdoc-title"> save</a>(user)
+                        <a href="#UserManager.prototype.save" class="jsdoc-title"> save</a>(user)
                     </li>
                                         <li>
-                        <a href="#JsonUserManager.prototype.setAdminName" class="jsdoc-title"> setAdminName</a>(name)
+                        <a href="#UserManager.prototype.setAdminName" class="jsdoc-title"> setAdminName</a>(name)
                     </li>
                     </ul>
                                 <h3>Instance Properties</h3>
                 <ul class="propertyoverview">
                                         <li>
-                        <a href="#JsonUserManager.prototype.checkFile" class="jsdoc-title"> checkFile</a>
+                        <a href="#UserManager.prototype.encryptor" class="jsdoc-title"> encryptor</a>
                     </li>
                                         <li>
-                        <a href="#JsonUserManager.prototype.constructor" class="jsdoc-title"> constructor</a>
-                    </li>
-                                        <li>
-                        <a href="#JsonUserManager.prototype.file" class="jsdoc-title"> file</a>
-                    </li>
-                                        <li>
-                        <a href="#JsonUserManager.prototype.saveUsers" class="jsdoc-title"> saveUsers</a>
-                    </li>
-                                        <li>
-                        <a href="#JsonUserManager.prototype.users" class="jsdoc-title"> users</a>
+                        <a href="#UserManager.prototype.users" class="jsdoc-title"> users</a>
                     </li>
                     </ul>
                                 <h3>Static Methods</h3>
                 <ul class="propertyoverview">
                                         <li>
-                        <a href="#JsonUserManager.create" class="jsdoc-title"> create</a>(file)
+                        <a href="#UserManager.create" class="jsdoc-title"> create</a>(obj)
                     </li>
                     </ul>
                 </div>
@@ -90,12 +87,12 @@ user manager operating on top of a JSON file containing user accounts.</p>
         <div class="details">
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager">
+            <div class="docitem" data-docitem="UserManager">
                 <h3 class="classtitle">
-                    <span class="itemtitle"><a id="JsonUserManager" href="#JsonUserManager" class="itemtitle itemname">JsonUserManager</a></span>
-                    <span class="itemtitle light">(file)</span></h3>
+                    <span class="itemtitle"><a id="UserManager" href="#UserManager" class="itemtitle itemname">UserManager</a></span>
+                    <span class="itemtitle light">(users)</span></h3>
                 <div>
-                    <p>Returns a new JsonUserManager instance</p>
+                    <p>Returns a new UserManager instance</p>
 
 
                 </div>
@@ -103,9 +100,10 @@ user manager operating on top of a JSON file containing user accounts.</p>
                     <h4>Parameters</h4>
                     <table>
                                                 <tr>
-                            <td>String</td>
-                            <td class="paramname">file</td>
-                            <td>The path to the JSON file to read the account data from</td>
+                            <td>Object</td>
+                            <td class="paramname">users</td>
+                            <td>An object with properties for each user containing
+at least the name, password and homeDirectory.</td>
                         </tr>
                         </table>
                 </div>
@@ -121,12 +119,12 @@ user manager operating on top of a JSON file containing user accounts.</p>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.create">
+            <div class="docitem" data-docitem="UserManager.create">
                 <h3 >
-                    <span class="itemtitle">JsonUserManager.<a id="JsonUserManager.create" href="#JsonUserManager.create" class="itemtitle itemname">create</a></span>
-                    <span class="itemtitle light">(file)</span></h3>
+                    <span class="itemtitle">UserManager.<a id="UserManager.create" href="#UserManager.create" class="itemtitle itemname">create</a></span>
+                    <span class="itemtitle light">(obj)</span></h3>
                 <div>
-                    <p>Convenience method for creating a JsonUserManager instance suitable for
+                    <p>Convenience method for creating a UserManager instance suitable for
 use with ftpserver module.</p>
 
 
@@ -135,9 +133,9 @@ use with ftpserver module.</p>
                     <h4>Parameters</h4>
                     <table>
                                                 <tr>
-                            <td>String</td>
-                            <td class="paramname">file</td>
-                            <td>The path to the JSON file to read the account data from</td>
+                            <td>Object</td>
+                            <td class="paramname">obj</td>
+                            <td>An object containing the user accounts</td>
                         </tr>
                         </table>
                 </div>
@@ -153,9 +151,9 @@ use with ftpserver module.</p>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.authenticate">
+            <div class="docitem" data-docitem="UserManager.prototype.authenticate">
                 <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.authenticate" href="#JsonUserManager.prototype.authenticate" class="itemtitle itemname">authenticate</a></span>
+                    <span class="itemtitle">UserManager.prototype.<a id="UserManager.prototype.authenticate" href="#UserManager.prototype.authenticate" class="itemtitle itemname">authenticate</a></span>
                     <span class="itemtitle light">(authentication)</span></h3>
                 <div>
                     <p>Authenticates against the user accounts of this manager</p>
@@ -186,33 +184,9 @@ user object, otherwise it throws an AuthenticationFailedException</td>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.checkFile">
+            <div class="docitem" data-docitem="UserManager.prototype.doesExist">
                 <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.checkFile" href="#JsonUserManager.prototype.checkFile" class="itemtitle itemname">checkFile</a></span>
-                    </h3>
-                <div>
-                    <p>Checks if the user file has been modified and reloads if necessary</p>
-
-
-                </div>
-                </div>
-                        <hr />
-            <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.constructor">
-                <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.constructor" href="#JsonUserManager.prototype.constructor" class="itemtitle itemname">constructor</a></span>
-                    </h3>
-                <div>
-                    
-
-
-                </div>
-                </div>
-                        <hr />
-            <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.doesExist">
-                <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.doesExist" href="#JsonUserManager.prototype.doesExist" class="itemtitle itemname">doesExist</a></span>
+                    <span class="itemtitle">UserManager.prototype.<a id="UserManager.prototype.doesExist" href="#UserManager.prototype.doesExist" class="itemtitle itemname">doesExist</a></span>
                     <span class="itemtitle light">(username)</span></h3>
                 <div>
                     <p>Returns true if this manager has a user with the given username</p>
@@ -241,24 +215,24 @@ user object, otherwise it throws an AuthenticationFailedException</td>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.file">
+            <div class="docitem" data-docitem="UserManager.prototype.encryptor">
                 <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.file" href="#JsonUserManager.prototype.file" class="itemtitle itemname">file</a></span>
+                    <span class="itemtitle">UserManager.prototype.<a id="UserManager.prototype.encryptor" href="#UserManager.prototype.encryptor" class="itemtitle itemname">encryptor</a></span>
                     </h3>
                 <div>
-                    <p>The JSON file containing the user accounts</p>
+                    <p>The encryptor used by this user manager</p>
 
 
                 </div>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.getAdminName">
+            <div class="docitem" data-docitem="UserManager.prototype.getAdminName">
                 <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.getAdminName" href="#JsonUserManager.prototype.getAdminName" class="itemtitle itemname">getAdminName</a></span>
+                    <span class="itemtitle">UserManager.prototype.<a id="UserManager.prototype.getAdminName" href="#UserManager.prototype.getAdminName" class="itemtitle itemname">getAdminName</a></span>
                     <span class="itemtitle light">()</span></h3>
                 <div>
-                    <p>Returns the name of the admin account (default: admin)</p>
+                    <p>Returns the name of the admin account (default: <code>admin</code>)</p>
 
 
                 </div>
@@ -274,9 +248,9 @@ user object, otherwise it throws an AuthenticationFailedException</td>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.getAllUserNames">
+            <div class="docitem" data-docitem="UserManager.prototype.getAllUserNames">
                 <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.getAllUserNames" href="#JsonUserManager.prototype.getAllUserNames" class="itemtitle itemname">getAllUserNames</a></span>
+                    <span class="itemtitle">UserManager.prototype.<a id="UserManager.prototype.getAllUserNames" href="#UserManager.prototype.getAllUserNames" class="itemtitle itemname">getAllUserNames</a></span>
                     <span class="itemtitle light">()</span></h3>
                 <div>
                     <p>Returns an array containing all user names known to this manager</p>
@@ -295,9 +269,9 @@ user object, otherwise it throws an AuthenticationFailedException</td>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.getUserByName">
+            <div class="docitem" data-docitem="UserManager.prototype.getUserByName">
                 <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.getUserByName" href="#JsonUserManager.prototype.getUserByName" class="itemtitle itemname">getUserByName</a></span>
+                    <span class="itemtitle">UserManager.prototype.<a id="UserManager.prototype.getUserByName" href="#UserManager.prototype.getUserByName" class="itemtitle itemname">getUserByName</a></span>
                     <span class="itemtitle light">(username)</span></h3>
                 <div>
                     <p>Returns the user with the given name</p>
@@ -326,9 +300,9 @@ user object, otherwise it throws an AuthenticationFailedException</td>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.isAdmin">
+            <div class="docitem" data-docitem="UserManager.prototype.isAdmin">
                 <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.isAdmin" href="#JsonUserManager.prototype.isAdmin" class="itemtitle itemname">isAdmin</a></span>
+                    <span class="itemtitle">UserManager.prototype.<a id="UserManager.prototype.isAdmin" href="#UserManager.prototype.isAdmin" class="itemtitle itemname">isAdmin</a></span>
                     <span class="itemtitle light">(username)</span></h3>
                 <div>
                     <p>Returns true if the user name passed as argument equals the admin account name.</p>
@@ -357,10 +331,10 @@ user object, otherwise it throws an AuthenticationFailedException</td>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.loadUsers">
+            <div class="docitem" data-docitem="UserManager.prototype.loadUsers">
                 <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.loadUsers" href="#JsonUserManager.prototype.loadUsers" class="itemtitle itemname">loadUsers</a></span>
-                    <span class="itemtitle light">(jsonFile)</span></h3>
+                    <span class="itemtitle">UserManager.prototype.<a id="UserManager.prototype.loadUsers" href="#UserManager.prototype.loadUsers" class="itemtitle itemname">loadUsers</a></span>
+                    <span class="itemtitle light">(obj)</span></h3>
                 <div>
                     <p>Loads the users from the JSON file. This method triggers a "reloaded"
 event on this usermanager instance.</p>
@@ -371,19 +345,18 @@ event on this usermanager instance.</p>
                     <h4>Parameters</h4>
                     <table>
                                                 <tr>
-                            <td>String</td>
-                            <td class="paramname">jsonFile</td>
-                            <td>Optional path to the JSON file to load. If given
-this file is used for all other file-related operations.</td>
+                            <td>Object</td>
+                            <td class="paramname">obj</td>
+                            <td>An object containing the user accounts</td>
                         </tr>
                         </table>
                 </div>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.save">
+            <div class="docitem" data-docitem="UserManager.prototype.save">
                 <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.save" href="#JsonUserManager.prototype.save" class="itemtitle itemname">save</a></span>
+                    <span class="itemtitle">UserManager.prototype.<a id="UserManager.prototype.save" href="#UserManager.prototype.save" class="itemtitle itemname">save</a></span>
                     <span class="itemtitle light">(user)</span></h3>
                 <div>
                     <p>Adds the user to the list of accounts, possibly replacing an already
@@ -404,21 +377,9 @@ existing account with the same name.</p>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.saveUsers">
+            <div class="docitem" data-docitem="UserManager.prototype.setAdminName">
                 <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.saveUsers" href="#JsonUserManager.prototype.saveUsers" class="itemtitle itemname">saveUsers</a></span>
-                    </h3>
-                <div>
-                    <p>Saves the users as JSON string into the file this manager operates on</p>
-
-
-                </div>
-                </div>
-                        <hr />
-            <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.setAdminName">
-                <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.setAdminName" href="#JsonUserManager.prototype.setAdminName" class="itemtitle itemname">setAdminName</a></span>
+                    <span class="itemtitle">UserManager.prototype.<a id="UserManager.prototype.setAdminName" href="#UserManager.prototype.setAdminName" class="itemtitle itemname">setAdminName</a></span>
                     <span class="itemtitle light">(name)</span></h3>
                 <div>
                     <p>Sets the admin name to the one passed as argument</p>
@@ -438,14 +399,45 @@ existing account with the same name.</p>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="JsonUserManager.prototype.users">
+            <div class="docitem" data-docitem="UserManager.prototype.users">
                 <h3 >
-                    <span class="itemtitle">JsonUserManager.prototype.<a id="JsonUserManager.prototype.users" href="#JsonUserManager.prototype.users" class="itemtitle itemname">users</a></span>
+                    <span class="itemtitle">UserManager.prototype.<a id="UserManager.prototype.users" href="#UserManager.prototype.users" class="itemtitle itemname">users</a></span>
                     </h3>
                 <div>
                     <p>An object containing the user accounts</p>
 
 
+                </div>
+                </div>
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="encryptPassword">
+                <h3 >
+                    <span class="itemtitle"><a id="encryptPassword" href="#encryptPassword" class="itemtitle itemname">encryptPassword</a></span>
+                    <span class="itemtitle light">(password)</span></h3>
+                <div>
+                    <p>Encrypts the password passed as argument.</p>
+
+
+                </div>
+                                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                                                <tr>
+                            <td>String</td>
+                            <td class="paramname">password</td>
+                            <td>The password to encrypt</td>
+                        </tr>
+                        </table>
+                </div>
+                                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>String</td>
+                            <td> The encrypted password</td>
+                        </tr>
+                    </table>
                 </div>
                 </div>
             </div>

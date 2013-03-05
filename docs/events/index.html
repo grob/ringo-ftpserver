@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>events - ringo-ftpserver</title>
+
+        <link rel="shortcut icon" href="http://ringojs.org/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="http://ringojs.org/favicon.ico" type="image/x-icon" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,600&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../static/jsdoc.css" />
+<link rel="stylesheet" href="../static/style.css" />
+<script type="text/javascript" src="../static/jquery.min.js"></script>
+<script type="text/javascript" src="../static/jsdoc.js"></script>
+
+
+  </head>
+
+  <body class="jsdoc standalone">
+    <div class="main">
+        <div class="content jsdoc">
+        
+            <h1 class="modulename">Module events</h1>
+        <div class="fileoverview">
+            <p>The default registry/dispatcher module used for listening
+on ftp server events and dispatching them to registered listeners.</p>
+
+
+        </div>
+
+        <div class="classoverview">
+
+            <div class="classes">
+                                <h2>Class <a href="#Events" class="jsdoc-title">Events</a></h2>
+                                <h3>Instance Methods</h3>
+                <ul class="propertyoverview">
+                                        <li>
+                        <a href="#Events.prototype.addListener" class="jsdoc-title"> addListener</a>(name, callback)
+                    </li>
+                                        <li>
+                        <a href="#Events.prototype.afterCommand" class="jsdoc-title"> afterCommand</a>(ftpSession, ftpRequest)
+                    </li>
+                                        <li>
+                        <a href="#Events.prototype.beforeCommand" class="jsdoc-title"> beforeCommand</a>(ftpSession, ftpRequest)
+                    </li>
+                                        <li>
+                        <a href="#Events.prototype.callListeners" class="jsdoc-title"> callListeners</a>(eventName, args)
+                    </li>
+                                        <li>
+                        <a href="#Events.prototype.destroy" class="jsdoc-title"> destroy</a>()
+                    </li>
+                                        <li>
+                        <a href="#Events.prototype.dispatchEvent" class="jsdoc-title"> dispatchEvent</a>(map, ftpSession, ftpRequest)
+                    </li>
+                                        <li>
+                        <a href="#Events.prototype.init" class="jsdoc-title"> init</a>(ftpletContext)
+                    </li>
+                                        <li>
+                        <a href="#Events.prototype.onConnect" class="jsdoc-title"> onConnect</a>(ftpSession)
+                    </li>
+                                        <li>
+                        <a href="#Events.prototype.onDisonnect" class="jsdoc-title"> onDisonnect</a>(ftpSession)
+                    </li>
+                                        <li>
+                        <a href="#Events.prototype.removeListener" class="jsdoc-title"> removeListener</a>(eventName, callback)
+                    </li>
+                    </ul>
+                                <h3>Instance Properties</h3>
+                <ul class="propertyoverview">
+                                        <li>
+                        <a href="#Events.prototype.listeners" class="jsdoc-title"> listeners</a>
+                    </li>
+                    </ul>
+                </div>
+        </div>
+        <div class="details">
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Events">
+                <h3 class="classtitle">
+                    <span class="itemtitle"><a id="Events" href="#Events" class="itemtitle itemname">Events</a></span>
+                    <span class="itemtitle light">()</span></h3>
+                <div>
+                    <p>An event registry/dispatcher for ringo-ftpserver</p>
+
+
+                </div>
+                </div>
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Events.prototype.addListener">
+                <h3 >
+                    <span class="itemtitle">Events.prototype.<a id="Events.prototype.addListener" href="#Events.prototype.addListener" class="itemtitle itemname">addListener</a></span>
+                    <span class="itemtitle light">(name, callback)</span></h3>
+                <div>
+                    <p>Registers a callback for the given event</p>
+
+
+                </div>
+                                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                                                <tr>
+                            <td>String</td>
+                            <td class="paramname">name</td>
+                            <td>The event name</td>
+                        </tr>
+                                                <tr>
+                            <td>Function</td>
+                            <td class="paramname">callback</td>
+                            <td>The callback method. The method will receive the
+session and request object as arguments</td>
+                        </tr>
+                        </table>
+                </div>
+                </div>
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Events.prototype.afterCommand">
+                <h3 >
+                    <span class="itemtitle">Events.prototype.<a id="Events.prototype.afterCommand" href="#Events.prototype.afterCommand" class="itemtitle itemname">afterCommand</a></span>
+                    <span class="itemtitle light">(ftpSession, ftpRequest)</span></h3>
+                <div>
+                    <p>Called by the ftplet container after a command has been executed by the server.</p>
+
+
+                </div>
+                                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                                                <tr>
+                            <td>org.apache.ftpserver.ftplet.FtpSession</td>
+                            <td class="paramname">ftpSession</td>
+                            <td>The FTP session</td>
+                        </tr>
+                                                <tr>
+                            <td>org.apache.ftpserver.ftplet.FtpRequest</td>
+                            <td class="paramname">ftpRequest</td>
+                            <td>The FTP request</td>
+                        </tr>
+                        </table>
+                </div>
+                                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>org.apache.ftpserver.ftplet.FtpletResult</td>
+                            <td> Either null or one of the FtpletResult values</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Events.prototype.beforeCommand">
+                <h3 >
+                    <span class="itemtitle">Events.prototype.<a id="Events.prototype.beforeCommand" href="#Events.prototype.beforeCommand" class="itemtitle itemname">beforeCommand</a></span>
+                    <span class="itemtitle light">(ftpSession, ftpRequest)</span></h3>
+                <div>
+                    <p>Called by the ftplet container before a command is executed by the server.</p>
+
+
+                </div>
+                                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                                                <tr>
+                            <td>org.apache.ftpserver.ftplet.FtpSession</td>
+                            <td class="paramname">ftpSession</td>
+                            <td>The FTP session</td>
+                        </tr>
+                                                <tr>
+                            <td>org.apache.ftpserver.ftplet.FtpRequest</td>
+                            <td class="paramname">ftpRequest</td>
+                            <td>The FTP request</td>
+                        </tr>
+                        </table>
+                </div>
+                                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>org.apache.ftpserver.ftplet.FtpletResult</td>
+                            <td> Either null or one of the FtpletResult values</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Events.prototype.callListeners">
+                <h3 >
+                    <span class="itemtitle">Events.prototype.<a id="Events.prototype.callListeners" href="#Events.prototype.callListeners" class="itemtitle itemname">callListeners</a></span>
+                    <span class="itemtitle light">(eventName, args)</span></h3>
+                <div>
+                    <p>Calls all registered callbacks for a given event name</p>
+
+
+                </div>
+                                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                                                <tr>
+                            <td>String</td>
+                            <td class="paramname">eventName</td>
+                            <td>The name of the event</td>
+                        </tr>
+                                                <tr>
+                            <td>Array</td>
+                            <td class="paramname">args</td>
+                            <td>An array containing the arguments to pass to the callbacks</td>
+                        </tr>
+                        </table>
+                </div>
+                                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>org.apache.ftpserver.ftplet.FtpletResult</td>
+                            <td> If one of the callbacks
+returns false, this method returns FtpletResult.SKIP, otherwise it returns
+FtpletResult.DEFAULT</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Events.prototype.destroy">
+                <h3 >
+                    <span class="itemtitle">Events.prototype.<a id="Events.prototype.destroy" href="#Events.prototype.destroy" class="itemtitle itemname">destroy</a></span>
+                    <span class="itemtitle light">()</span></h3>
+                <div>
+                    <p>Called by the ftplet container</p>
+
+
+                </div>
+                </div>
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Events.prototype.dispatchEvent">
+                <h3 >
+                    <span class="itemtitle">Events.prototype.<a id="Events.prototype.dispatchEvent" href="#Events.prototype.dispatchEvent" class="itemtitle itemname">dispatchEvent</a></span>
+                    <span class="itemtitle light">(map, ftpSession, ftpRequest)</span></h3>
+                <div>
+                    <p>Dispatches an ftpserver event to the registered callbacks. In addition this
+method calls registered callbacks for an "all" event before all others.</p>
+
+
+                </div>
+                                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                                                <tr>
+                            <td>Object</td>
+                            <td class="paramname">map</td>
+                            <td>The mapping between FTP commands and public commands</td>
+                        </tr>
+                                                <tr>
+                            <td>org.apache.ftpserver.ftplet.FtpSession</td>
+                            <td class="paramname">ftpSession</td>
+                            <td>The session</td>
+                        </tr>
+                                                <tr>
+                            <td>org.apache.ftpserver.ftplet.FtpRequest</td>
+                            <td class="paramname">ftpRequest</td>
+                            <td>The FTP request</td>
+                        </tr>
+                        </table>
+                </div>
+                                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>org.apache.ftpserver.ftplet.FtpletResult</td>
+                            <td> If one of the callbacks
+returns false, this method returns FtpletResult.SKIP, otherwise it returns
+FtpletResult.DEFAULT</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Events.prototype.init">
+                <h3 >
+                    <span class="itemtitle">Events.prototype.<a id="Events.prototype.init" href="#Events.prototype.init" class="itemtitle itemname">init</a></span>
+                    <span class="itemtitle light">(ftpletContext)</span></h3>
+                <div>
+                    <p>Called by the ftplet container</p>
+
+
+                </div>
+                                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                                                <tr>
+                            <td>org.apache.ftpserver.ftplet.FtpletContext</td>
+                            <td class="paramname">ftpletContext</td>
+                            <td>The Ftplet context</td>
+                        </tr>
+                        </table>
+                </div>
+                </div>
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Events.prototype.listeners">
+                <h3 >
+                    <span class="itemtitle">Events.prototype.<a id="Events.prototype.listeners" href="#Events.prototype.listeners" class="itemtitle itemname">listeners</a></span>
+                    </h3>
+                <div>
+                    <p>An object containing the listener callbacks registered
+for known events.</p>
+
+
+                </div>
+                </div>
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Events.prototype.onConnect">
+                <h3 >
+                    <span class="itemtitle">Events.prototype.<a id="Events.prototype.onConnect" href="#Events.prototype.onConnect" class="itemtitle itemname">onConnect</a></span>
+                    <span class="itemtitle light">(ftpSession)</span></h3>
+                <div>
+                    <p>Called when a client connects</p>
+
+
+                </div>
+                                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                                                <tr>
+                            <td>org.apache.ftpserver.ftplet.FtpSession</td>
+                            <td class="paramname">ftpSession</td>
+                            <td>The FTP session</td>
+                        </tr>
+                        </table>
+                </div>
+                </div>
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Events.prototype.onDisonnect">
+                <h3 >
+                    <span class="itemtitle">Events.prototype.<a id="Events.prototype.onDisonnect" href="#Events.prototype.onDisonnect" class="itemtitle itemname">onDisonnect</a></span>
+                    <span class="itemtitle light">(ftpSession)</span></h3>
+                <div>
+                    <p>Called when a client connects</p>
+
+
+                </div>
+                                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                                                <tr>
+                            <td>org.apache.ftpserver.ftplet.FtpSession</td>
+                            <td class="paramname">ftpSession</td>
+                            <td>The FTP session</td>
+                        </tr>
+                        </table>
+                </div>
+                </div>
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Events.prototype.removeListener">
+                <h3 >
+                    <span class="itemtitle">Events.prototype.<a id="Events.prototype.removeListener" href="#Events.prototype.removeListener" class="itemtitle itemname">removeListener</a></span>
+                    <span class="itemtitle light">(eventName, callback)</span></h3>
+                <div>
+                    <p>Removes either all callbacks registered for an event, or a single one</p>
+
+
+                </div>
+                                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                                                <tr>
+                            <td>String</td>
+                            <td class="paramname">eventName</td>
+                            <td>The name of the event</td>
+                        </tr>
+                                                <tr>
+                            <td>Function</td>
+                            <td class="paramname">callback</td>
+                            <td>Optional callback. If specified only this callback
+will be unregistered from the event.</td>
+                        </tr>
+                        </table>
+                </div>
+                </div>
+            </div>
+    
+        </div>
+
+        <nav class="jsdoc standalone">
+            <h1>ringo-ftpserver</h1>
+            <div class="jsdocSidenav">
+   <div class="toggles">
+      <a href="../index.html">&bull; Modules</a>
+      <a href="../index_all.html">&bull; Overview</a>
+   </div>
+
+   <input id="filter" type="text" placeholder="Filter modules" />
+
+   <ul id="modulelist">
+            <li><a href="../events/index.html">events</a></li>
+            <li><a href="../ftpserver/index.html">ftpserver</a></li>
+            <li><a href="../jsonusermanager/index.html">jsonusermanager</a></li>
+            <li><a href="../usermanager/index.html">usermanager</a></li>
+      </ul>
+</div>
+
+        </nav>
+    </div>
+    </body>
+</html>
