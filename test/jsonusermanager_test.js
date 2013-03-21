@@ -131,6 +131,13 @@ exports.testLoadUsers = function() {
     assert.isTrue(usermgr.users.hasOwnProperty("ringojs"));
     assert.isFalse(usermgr.users.hasOwnProperty("test"));
     assert.isTrue(gotEvent);
+    gotEvent = false;
+    saveUsersFile(USERS);
+    // call loadUsers without argument
+    usermgr.loadUsers();
+    assert.isFalse(usermgr.users.hasOwnProperty("ringojs"));
+    assert.isTrue(usermgr.users.hasOwnProperty("test"));
+    assert.isTrue(gotEvent);
 };
 
 exports.testSave = function() {
