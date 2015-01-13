@@ -3,7 +3,7 @@ var shell = require("ringo/shell");
 var term = require("ringo/term");
 var fs = require("fs");
 var objects = require("ringo/utils/objects");
-var {encryptPassword} = require("./lib/jsonusermanager");
+var {encryptPassword} = require("./lib/usermanager");
 
 var parser = new Parser();
 parser.addOption("f", "file", "file", "The JSON file containing the accounts");
