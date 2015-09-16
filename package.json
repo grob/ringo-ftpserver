@@ -1,6 +1,6 @@
 {
     "name": "ringo-ftpserver",
-    "version": "0.1",
+    "version": "1.0",
     "description": "FTP server for RingoJS",
     "keywords": ["ftp", "ringojs"],
     "homepage": "https://github.com/grob/ringo-ftpserver/",
@@ -9,7 +9,14 @@
         "email": "robert@nomatic.org",
         "web": "http://github.com/grob/"
     },
-    "contributors": [],
+    "contributors": [{
+        "name": "Simon Oberhammer",
+        "email": "simon@nekapuzer.at",
+        "web": "http://nekapuzer.at"
+    }, {
+        "name": "Manfred Andres",
+        "email": "manfred.andres@gmail.com"
+    }],
     "dependencies": {},
     "repositories": [{
         "type": "git",
