@@ -197,13 +197,13 @@ exports.testCheckFile = function()  {
     assert.isTrue(usermgr.doesExist(USERS.test.name));
     // necessary because lastModified has only seconds granularity (at least ext4):
     java.lang.Thread.sleep(1000);
-    fs.write(USERS_FILE, JSON.stringify(objects.clone(USERS, {
+    fs.write(USERS_FILE, JSON.stringify(objects.merge(objects.clone(USERS, false, true), {
         "ringojs": {
             "name": "ringojs",
             "password": USERS.test.password,
             "homeDirectory": USERS.test.homeDirectory
         }
-    }), null, 4));
+    })), null, 4);
     assert.isTrue(usermgr.doesExist("ringojs"));
 };
 

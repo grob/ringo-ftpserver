@@ -1,6 +1,6 @@
 {
     "name": "ringo-ftpserver",
-    "version": "1.0",
+    "version": "1.1",
     "description": "FTP server for RingoJS",
     "keywords": ["ftp", "ringojs"],
     "homepage": "https://github.com/grob/ringo-ftpserver/",
@@ -28,7 +28,7 @@
         "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     }],
     "engines": {
-        "ringojs": ">=0.8"
+        "ringojs": ">=1.0"
     },
     "main": "./lib/ftpserver"
 }

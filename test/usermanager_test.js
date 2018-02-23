@@ -34,7 +34,7 @@ exports.testConstructor = function() {
 };
 
 exports.testDeleteUser = function() {
-    var usermgr = new UserManager(objects.clone(USERS, {}, true));
+    var usermgr = new UserManager(objects.clone(USERS, false, true));
     usermgr.delete("test");
     assert.isFalse(usermgr.users.hasOwnProperty("test"));
 };
