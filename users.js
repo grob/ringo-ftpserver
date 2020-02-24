@@ -1,14 +1,14 @@
-var {Parser} = require("ringo/args");
-var shell = require("ringo/shell");
-var term = require("ringo/term");
-var fs = require("fs");
-var objects = require("ringo/utils/objects");
-var {encryptPassword} = require("./lib/usermanager");
+const {Parser} = require("ringo/args");
+const shell = require("ringo/shell");
+const term = require("ringo/term");
+const fs = require("fs");
+const objects = require("ringo/utils/objects");
+const {encryptPassword} = require("./lib/usermanager");
 
-var parser = new Parser();
+const parser = new Parser();
 parser.addOption("f", "file", "file", "The JSON file containing the accounts");
 
-var help = function() {
+const help = function() {
     term.writeln("Usage:");
     term.writeln("\n   ringo users.js -f path/to/users.json <command> <username> \n");
     term.writeln("Available options:");
@@ -18,8 +18,8 @@ var help = function() {
     term.writeln();
 };
 
-var main = function(args) {
-    var opts = {};
+const main = function(args) {
+    const opts = {};
     try {
         parser.parse(args, opts);
     } catch (e) {
@@ -32,7 +32,7 @@ var main = function(args) {
         help();
         return;
     }
-    var users = {};
+    let users = {};
     if (fs.exists(opts.file)) {
         try {
             users = JSON.parse(fs.read(opts.file));
@@ -40,11 +40,11 @@ var main = function(args) {
             term.writeln(opts.file, "is empty or invalid, initializing new account list");
         }
     }
-    var command = args.shift();
+    const command = args.shift();
     if (!command || command === "list") {
         list(users);
     } else if (["add", "edit", "remove", "enable", "disable", "password"].indexOf(command) > -1) {
-        var username = args.shift();
+        const username = args.shift();
         if (!username) {
             term.writeln(term.RED, "Please specify the username", term.RESET);
         } else if (this[command](users, username) === true) {
@@ -56,13 +56,13 @@ var main = function(args) {
     }
 };
 
-var save = function(users, file) {
+const save = function(users, file) {
     fs.write(file, JSON.stringify(users, null, 4));
     term.writeln(term.GREEN, "Saved user accounts in", file, term.RESET);
 };
 
-var getAccountData = function() {
-    var homeDirectory, canWrite, maxLogin, maxLoginPerIp, downloadRate,
+const getAccountData = function() {
+    let homeDirectory, canWrite, maxLogin, maxLoginPerIp, downloadRate,
             uploadRate, maxIdleTime;
     while (!homeDirectory) {
         homeDirectory = shell.readln("Home directory: ").trim();
@@ -71,7 +71,7 @@ var getAccountData = function() {
             homeDirectory = null;
         }
     }
-    canWrite = shell.readln("Write permission (Y/n): ").toLowerCase() != "n";
+    canWrite = shell.readln("Write permission (Y/n): ").toLowerCase() !== "n";
     maxLogin = parseInt(shell.readln("Max. concurrent logins (0 for no restriction): "), 10) || 0;
     maxLoginPerIp = parseInt(shell.readln("Max. concurrent logins per IP address (0 for no restriction): "), 10) || 0;
     downloadRate = parseInt(shell.readln("Max. download rate (0 = unlimited): "), 10) || 0;
@@ -88,8 +88,8 @@ var getAccountData = function() {
     };
 };
 
-var getPassword = function() {
-    var password, passwordConfirm;
+const getPassword = function() {
+    let password, passwordConfirm;
     while (!password || (password !== passwordConfirm)) {
         password = shell.readln("Password: ", "*").trim();
         passwordConfirm = shell.readln("Confirm password: ", "*").trim();
@@ -100,7 +100,7 @@ var getPassword = function() {
     return encryptPassword(password);
 };
 
-var add = function(users, username) {
+const add = function(users, username) {
     if (users.hasOwnProperty(username)) {
         term.writeln(term.RED, "User", username, "already exists", term.RESET);
         return false;
@@ -114,7 +114,7 @@ var add = function(users, username) {
     return true;
 };
 
-var edit = function(users, username) {
+const edit = function(users, username) {
     if (!users.hasOwnProperty(username)) {
         term.writeln(term.RED, "User", username, "doesn't exist", term.RESET);
         return false;
@@ -124,20 +124,21 @@ var edit = function(users, username) {
     return true;
 };
 
-var list = function(users) {
+const list = function(users) {
     term.writeln(term.BOLD, "\nAvailable FTP accounts\n", term.RESET)
-    for each (let props in users) {
+    Object.keys(users).forEach(name => {
+        const props = users[name];
         term.write("   ");
         if (props.isEnabled === false) {
             term.writeln("[disabled]");
         }
         term.writeln(props.name, "(" + props.homeDirectory + ")");
-    }
+    });
     term.writeln();
     return true;
 };
 
-var remove = function(users, username) {
+const remove = function(users, username) {
     if (!users.hasOwnProperty(username)) {
         term.writeln(term.RED, "User", username, "doesn't exist");
         return false;
@@ -147,7 +148,7 @@ var remove = function(users, username) {
     return true;
 };
 
-var enable = function(users, username) {
+const enable = function(users, username) {
     if (!users.hasOwnProperty(username)) {
         term.writeln(term.RED, "User", username, "doesn't exist");
         return false;
@@ -157,7 +158,7 @@ var enable = function(users, username) {
     return true;
 };
 
-var disable = function(users, username) {
+const disable = function(users, username) {
     if (!users.hasOwnProperty(username)) {
         term.writeln(term.RED, "User", username, "doesn't exist");
         return false;
@@ -167,7 +168,7 @@ var disable = function(users, username) {
     return true;
 };
 
-var password = function(users, username) {
+const password = function(users, username) {
     if (!users.hasOwnProperty(username)) {
         term.writeln(term.RED, "User", username, "doesn't exist");
         return false;
