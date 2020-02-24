@@ -1,4 +1,4 @@
-var system = require("system");
+const system = require("system");
 
 exports.testUserManager = require("./usermanager_test");
 exports.testJsonUserManager = require("./jsonusermanager_test");
